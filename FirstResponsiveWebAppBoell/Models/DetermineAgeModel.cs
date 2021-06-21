@@ -21,9 +21,16 @@ namespace FirstResponsiveWebAppBoell.Models
         {
             //variables within the method
             const int CURRENT_YEAR = 2021;
-            
-            int? AgeFor2021 = CURRENT_YEAR - BirthYear;
-          
+            const int MIN_YEAR = 1800;
+            int? AgeFor2021;
+
+            if (BirthYear < MIN_YEAR || BirthYear > CURRENT_YEAR)
+            { AgeFor2021 = 0; 
+            }
+            else
+            {
+                AgeFor2021 = CURRENT_YEAR - BirthYear;
+            }
             return AgeFor2021; //returns value
         }
   

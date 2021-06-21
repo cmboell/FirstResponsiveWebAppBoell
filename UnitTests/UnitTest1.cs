@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 using FirstResponsiveWebAppBoell.Models;
-using FirstResponsiveWebAppBoell.Controllers;
+
 namespace UnitTests
 {
     public class UnitTest1
@@ -36,6 +36,51 @@ namespace UnitTests
             Assert.Equal(actual, expected);
 
         }
-  
+        [Fact]
+        public void BadYear()
+        {
+            // Arrange
+            DetermineAgeModel age = new DetermineAgeModel();
+            age.BirthYear = 1700;
+            int expected = 0;
+
+            // Act
+            int? actual = age.AgeThisYear();
+
+            // Assert
+            Assert.Equal(actual, expected);
+
+        }
+        [Fact]
+        public void BadYear2()
+        {
+            // Arrange
+            DetermineAgeModel age = new DetermineAgeModel();
+            age.BirthYear = 2022;
+            int expected = 0;
+
+            // Act
+            int? actual = age.AgeThisYear();
+
+            // Assert
+            Assert.Equal(actual, expected);
+
+        }
+        [Fact]
+        public void PassingYear3()
+        {
+            // Arrange
+            DetermineAgeModel age = new DetermineAgeModel();
+            age.BirthYear = 2020;
+            int expected = 1;
+
+            // Act
+            int? actual = age.AgeThisYear();
+
+            // Assert
+            Assert.Equal(actual, expected);
+
+        }
+
     }
 }
