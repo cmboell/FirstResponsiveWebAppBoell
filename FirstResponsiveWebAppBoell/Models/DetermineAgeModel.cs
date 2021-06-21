@@ -17,12 +17,15 @@ namespace FirstResponsiveWebAppBoell.Models
         public int? BirthYear { get; set; }
 
         //method for determining what age will be in 2021
-        public int? AgeThisYear()
+        public  int? AgeThisYear()
         {
             //variables within the method
             const int CURRENT_YEAR = 2021;
+            
             int? AgeFor2021 = CURRENT_YEAR - BirthYear;
+          
             return AgeFor2021; //returns value
         }
+  
     }
 }
